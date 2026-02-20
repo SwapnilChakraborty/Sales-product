@@ -13,24 +13,24 @@ export default function SupportSection() {
     ]
 
     return (
-        <section className="py-24 bg-secondary/20" id="support">
+        <section className="py-16 lg:py-24 bg-secondary/20" id="support">
             <div className="container px-4 md:px-6">
-                <div className="grid lg:grid-cols-2 gap-16 items-start">
+                <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
 
                     {/* Support Info */}
-                    <div>
+                    <div className="text-center lg:text-left">
                         <motion.div
                             initial={{ opacity: 0, y: 20 }}
                             whileInView={{ opacity: 1, y: 0 }}
                             viewport={{ once: true }}
                         >
-                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-6">Expert Support</h2>
-                            <p className="text-lg text-muted-foreground mb-8">
+                            <h2 className="text-3xl md:text-5xl font-bold tracking-tight mb-4 lg:mb-6">Expert Support</h2>
+                            <p className="text-base lg:text-lg text-muted-foreground mb-8">
                                 Our dedicated support team is here to help you get the most out of your Westmire experience.
                                 Whether you need technical assistance or product recommendations, we've got you covered.
                             </p>
 
-                            <div className="flex gap-4 mb-12">
+                            <div className="flex flex-wrap justify-center lg:justify-start gap-4 mb-10 lg:mb-12">
                                 <Button className="gap-2">
                                     <MessageSquare className="w-4 h-4" />
                                     Live Chat

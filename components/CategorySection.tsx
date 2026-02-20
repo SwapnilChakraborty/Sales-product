@@ -7,14 +7,14 @@ import Image from "next/image"
 
 export default function CategorySection() {
     return (
-        <section className="py-32 bg-neutral-950" id="categories">
+        <section className="py-20 lg:py-32 bg-neutral-950" id="categories">
             <div className="container px-4 md:px-6">
-                <div className="mb-16 md:flex justify-between items-end">
-                    <div className="max-w-xl">
+                <div className="mb-12 lg:mb-16 md:flex justify-between items-end">
+                    <div className="max-w-xl text-center md:text-left">
                         <h2 className="text-3xl md:text-5xl font-bold tracking-tight text-white mb-4">
                             Curated for <span className="text-primary">Creator-Pros</span>.
                         </h2>
-                        <p className="text-neutral-400 text-lg">
+                        <p className="text-neutral-400 text-base md:text-lg">
                             Browse our collection of premium tools designed to elevate your workflow and lifestyle.
                         </p>
                     </div>
@@ -23,7 +23,7 @@ export default function CategorySection() {
                     </Link>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 grid-rows-2 gap-4 h-auto lg:h-[600px]">
+                <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-4 h-auto lg:h-[600px]">
                     {/* Large Item - Audio */}
                     <motion.div
                         initial={{ opacity: 0, y: 20 }}

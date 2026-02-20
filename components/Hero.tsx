@@ -19,7 +19,7 @@ export default function Hero() {
     const scale = useTransform(scrollYProgress, [0, 1], [1, 0.8])
 
     return (
-        <section ref={containerRef} className="relative min-h-[110vh] flex items-center justify-center overflow-hidden pt-32 pb-20">
+        <section ref={containerRef} className="relative min-h-screen lg:min-h-[110vh] flex items-center justify-center overflow-hidden pt-24 pb-12 lg:pt-32 lg:pb-20">
             {/* Dynamic Background */}
             <div className="absolute inset-0 bg-neutral-950 z-0">
                 <div className="absolute top-[-20%] right-[-10%] w-[800px] h-[800px] bg-primary/10 rounded-full blur-[120px]" />
@@ -27,23 +27,23 @@ export default function Hero() {
             </div>
 
             <div className="container px-4 md:px-6 relative z-10 h-full">
-                <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center h-full">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center h-full">
 
                     {/* Text Content */}
                     <motion.div
                         style={{ y, opacity }}
-                        className="flex flex-col gap-8 text-center lg:text-left pt-10"
+                        className="flex flex-col gap-6 md:gap-8 text-center lg:text-left pt-4 lg:pt-10"
                     >
                         <motion.div
                             initial={{ opacity: 0, y: 30 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, ease: "easeOut" }}
                         >
-                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-xs font-medium text-white mb-6 backdrop-blur-sm">
+                            <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-white/10 bg-white/5 text-[10px] sm:text-xs font-medium text-white mb-4 sm:mb-6 backdrop-blur-sm">
                                 <span className="w-2 h-2 rounded-full bg-primary animate-pulse" />
                                 New Release 2026
                             </div>
-                            <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-tight mb-6">
+                            <h1 className="text-4xl sm:text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white leading-[1.1] mb-4 sm:mb-6">
                                 Pure <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-white to-purple-400">Audio</span> Bliss.
                             </h1>
                         </motion.div>
@@ -52,7 +52,7 @@ export default function Hero() {
                             initial={{ opacity: 0, y: 20 }}
                             animate={{ opacity: 1, y: 0 }}
                             transition={{ duration: 0.8, delay: 0.2 }}
-                            className="text-lg md:text-xl text-neutral-400 max-w-[500px] mx-auto lg:mx-0 leading-relaxed"
+                            className="text-base sm:text-lg md:text-xl text-neutral-400 max-w-[500px] mx-auto lg:mx-0 leading-relaxed px-4 sm:px-0"
                         >
                             Experience sound in its purest form. The Westmire A56 redefines acoustic precision with AI-driven spatial audio.
                         </motion.p>
@@ -65,14 +65,14 @@ export default function Hero() {
                         >
                             <Button
                                 size="lg"
-                                className="rounded-full h-14 px-8 text-base bg-white text-black hover:bg-white/90 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] transition-all hover:scale-105 active:scale-95"
+                                className="w-full sm:w-auto rounded-full h-12 sm:h-14 px-8 text-base bg-white text-black hover:bg-white/90 shadow-[0_0_40px_-10px_rgba(255,255,255,0.3)] transition-all hover:scale-105 active:scale-95"
                                 onClick={() => toast.info("Demo Mode: Pre-orders are currently closed.")}
                             >
                                 Pre-order Now
                                 <ArrowRight className="w-5 h-5 ml-2" />
                             </Button>
 
-                            <div className="flex items-center gap-3 text-sm font-medium text-white/80 cursor-pointer group hover:text-white transition-colors">
+                            <div className="flex items-center gap-3 text-sm font-medium text-white/80 cursor-pointer group hover:text-white transition-colors py-2">
                                 <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-primary group-hover:text-black transition-colors">
                                     <Play className="w-4 h-4 fill-current" />
                                 </div>
@@ -83,7 +83,7 @@ export default function Hero() {
 
                     {/* Interactive Image */}
                     <motion.div
-                        className="relative h-[60vh] lg:h-[80vh] w-full flex items-center justify-center perspective-[1000px]"
+                        className="relative h-[35vh] sm:h-[45vh] lg:h-[80vh] w-full flex items-center justify-center perspective-[1000px] mt-8 lg:mt-0"
                         style={{ scale }}
                     >
                         <ProductDisplay />
@@ -155,11 +155,11 @@ function ProductDisplay() {
 
             {/* Floating badge */}
             <motion.div
-                className="absolute top-[20%] right-[5%] p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl z-20"
+                className="absolute top-[15%] right-[2%] sm:right-[5%] p-3 sm:p-4 bg-white/5 backdrop-blur-md rounded-2xl border border-white/10 shadow-xl z-20"
                 style={{ translateZ: "40px" }}
             >
-                <div className="text-xs text-white/60 mb-1">Battery Life</div>
-                <div className="text-xl font-bold text-white">40 Hrs</div>
+                <div className="text-[10px] sm:text-xs text-white/60 mb-0.5 sm:mb-1">Battery Life</div>
+                <div className="text-base sm:text-xl font-bold text-white">40 Hrs</div>
             </motion.div>
         </motion.div>
     )
